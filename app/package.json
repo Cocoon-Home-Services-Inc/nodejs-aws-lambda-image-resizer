@@ -11,7 +11,7 @@
     "build:init": "rm -rf package-lock.json && rm -rf build && rm -rf node_modules",
     "build:zip": "zip -rq build.zip .",
     "build:dist": "mkdir build && mv build.zip build/",
-    "build": "npm run build:init && npm install --arch=x64 --platform=linux --libc=glibc sharp --production && npm run build:zip && npm run build:dist"
+    "build": "npm run build:init && npm install --arch=arm64 --platform=linux sharp --production && npm run build:zip && npm run build:dist"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,7 @@
     "url": "https://github.com/MuhammadReda/aws-lambda-image-processor/issues"
   },
   "dependencies": {
+    "aws-sdk": "^2.36.0",
     "sharp": "^0.30.7"
-  },
-  "devDependencies": {
-    "aws-sdk": "^2.36.0"
   }
 }
