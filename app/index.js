@@ -32,7 +32,10 @@ function getResource(resourcePath) {
   let params = { Bucket: BUCKET, Key: resourcePath };
   return new Promise((resolve, reject) => {
     S3.getObject(params, (err, data) => {
-      if (err) return resolve(false);
+      if (err) {
+        console.log("Get resource error:", err);
+        return resolve(false);
+      }
       if (data) return resolve(data);
     });
   });
